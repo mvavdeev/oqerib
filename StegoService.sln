@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StegoService.Core", "StegoService.Core\StegoService.Core.csproj", "{2073D11F-BCD9-4D49-8CF9-1D13B792DB80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StegoService.CLI", "StegoService.CLI\StegoService.CLI.csproj", "{96AF853B-42B0-4AA4-B8AD-79373B4E295D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StegoService.Web", "StegoService.Web\StegoService.Web.csproj", "{D5485F8E-5718-4981-BA01-C36C6F285075}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2073D11F-BCD9-4D49-8CF9-1D13B792DB80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2073D11F-BCD9-4D49-8CF9-1D13B792DB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2073D11F-BCD9-4D49-8CF9-1D13B792DB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2073D11F-BCD9-4D49-8CF9-1D13B792DB80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96AF853B-42B0-4AA4-B8AD-79373B4E295D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96AF853B-42B0-4AA4-B8AD-79373B4E295D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96AF853B-42B0-4AA4-B8AD-79373B4E295D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96AF853B-42B0-4AA4-B8AD-79373B4E295D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5485F8E-5718-4981-BA01-C36C6F285075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5485F8E-5718-4981-BA01-C36C6F285075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5485F8E-5718-4981-BA01-C36C6F285075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5485F8E-5718-4981-BA01-C36C6F285075}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

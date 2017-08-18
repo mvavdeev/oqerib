@@ -1,0 +1,114 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Стеганографический Алгоритм Бенхама</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1>Стеганографический Алгоритм Бенхама</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Внедрение текста в изображение</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ol>
+                            <li>Нажав на кнопку "Выбирете файл" выберете bmp/png контейнер.</li>
+                            <li>В текстовом поле введите текст для внедрения.</li>
+                            <li>Выберите режим работы (без добавления шума или с добавлением).</li>
+                            <li>Нажмите на кнопку "Внедрить".</li>
+                            <li>Дождитесь загрузки изображения.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Извлечения текста из изображения</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ol>
+                            <li>Нажав на кнопку "Выбирете файл" выберете bmp/png контейнер с внедрённым текстом.</li>
+                            <li>Нажмите на кнопку "Извлечь".</li>
+                            <li>Дождитесь пока в текстовом поле появится результат.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Внедрить текст в изображение</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form name="insertForm" action="insert" enctype="multipart/form-data" method="post">
+                            <div class="form-group">
+                                <span>Изображение:</span>
+                                <input type="file" name="inputFile" class="form-control-file" accept="image/*">
+                            </div>
+                            <div class="form-group">
+                                <span>Текст:</span>
+                                <textarea name="text" class="form-control" rows="5" style="min-width: 100%"></textarea>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="noise" value="no" checked>Без шума</label>
+                                <label><input type="radio" name="noise" value="yes">С шумом</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Внедрить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Извлечь текст из изображения</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form name="extractForm" action="extract" enctype="multipart/form-data" method="post">
+                            <div class="form-group">
+                                <span>Изображение:</span>
+                                <input type="file" name="inputFile" class="form-control-file" accept="image/*">
+                            </div>
+                            <div class="form-group">
+                                <span>Текст:</span>
+                                <textarea id="text" class="form-control" rows="5" style="min-width: 100%"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Извлечь</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var form = document.forms.extractForm;
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            form = document.forms.extractForm;
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/extract', true);
+            xhr.send(formData);
+            xhr.onload = function () {
+                form.elements.text.value = this.responseText;
+            }
+        });
+    </script>
+</body>
+</html>

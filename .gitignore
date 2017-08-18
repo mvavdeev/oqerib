@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/packages
+/StegoService.CLI/bin
+/StegoService.CLI/obj
+/StegoService.Core/bin
+/StegoService.Core/obj
+/StegoService.Web/bin
+/StegoService.Web/obj
+/.vs/StegoService/v14
+/.vs/config
